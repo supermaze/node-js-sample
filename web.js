@@ -5,7 +5,7 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   //response.send('Hello World 2!');
-  var file = fs.readFile('index.html');
+  var file = fs.createReadStream('index.html');
   file.pipe(response);
 });
 
